@@ -5,51 +5,85 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ورود</title>
 <style>
-  :root{
-    --bg:#fafafa;
-    --card:#fff;
-    --blue:#0095f6;
-    --muted:#8e8e8e;
-    font-family: "Helvetica Neue", Arial, Tahoma, sans-serif;
+  :root {
+    --bg: #fafafa;
+    --card: #fff;
+    --blue: #0095f6;
+    --muted: #8e8e8e;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  html,body{height:100%;margin:0;background:var(--bg);color:#111;direction:rtl}
-  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
-  .card {max-width:920px;display:flex;gap:40px;align-items:center;justify-content:center}
-  .panel {flex:1;max-width:420px;}
-  .login-card {
-    background:var(--card);padding:28px;border-radius:8px;border:1px solid #e6e6e6;
-    box-shadow:0 6px 22px rgba(0,0,0,0.04);
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: #262626;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-  .logo{font-weight:800;font-size:34px;color:#262626;text-align:center;margin-bottom:10px}
-  form{display:flex;flex-direction:column;gap:10px}
+  .login-container {
+    width: 350px;
+    background: var(--card);
+    border: 1px solid #dbdbdb;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: 'Billabong', cursive;
+  }
   input {
-    padding:12px 14px;border-radius:6px;border:1px solid #dbdbdb;background:#fff;font-size:15px;
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 14px;
+    box-sizing: border-box;
   }
-  .btn {
-    background:var(--blue);color:#fff;border:0;padding:12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:15px;
+  button {
+    width: 100%;
+    padding: 10px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button:hover {
+    background: #007acc;
+  }
+  .footer {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 20px;
   }
 </style>
 <script>
-function handleLogin(e){
-  e.preventDefault();
-  window.location.href = 'https://ahvaz.ir';
+function handleLogin(event) {
+  event.preventDefault();
+  window.location.href = "https://ahvaz.ir";
 }
 </script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="panel">
-        <div class="login-card">
-          <div class="logo">ورود</div>
-          <form onsubmit="handleLogin(event)">
-            <input type="text" placeholder="نام کاربری" required />
-            <input type="password" placeholder="رمز عبور" required />
-            <button class="btn" type="submit">ورود</button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <div class="login-container">
+    <div class="logo">Instagram</div>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" placeholder="نام کاربری یا ایمیل" required>
+      <input type="password" placeholder="رمز عبور" required>
+      <button type="submit">ورود</button>
+    </form>
+    <div class="footer">© 2025</div>
   </div>
 </body>
 </html>
